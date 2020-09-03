@@ -10,10 +10,10 @@ if (!class_exists('gravity_forms_populater_for_go_pricing')) {
     {
         function __construct()
         {
-            add_action('wp_enqueue_scripts', 'my_load_scripts');
+            add_action('wp_enqueue_scripts', [$this, 'wp_enqueue_scripts']);
         }
 
-        function my_load_scripts($hook)
+        function wp_enqueue_scripts($hook)
         {
             $my_js_ver = date(
                 'ymd-Gis',
